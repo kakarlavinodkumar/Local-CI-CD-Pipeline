@@ -27,10 +27,16 @@ router.post('/login', async function(req, res, next) {
   try {
     const username = req.body.username;
     const password = req.body.password;
-    const response = await userService.login(username, password);
-    return res.json({
-      ...response
-    });
+    
+    userService.login(username, password)
+    .then(token => {
+      return res.json({
+        token: token
+      });
+    }).catch(err => {
+      throw err;
+    })
+
   } catch (err) {
     return res.status(401).json({
       message : err.message || "authentication failed"

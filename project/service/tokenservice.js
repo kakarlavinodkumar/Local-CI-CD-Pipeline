@@ -1,8 +1,9 @@
 const jwt = require('jsonwebtoken');
 const secret_key = "local_ci_cd_pipeline";
 
-function generateToken(payload) {
-    const token = jwt.sign(...payload, secret_key, {
+async function generateToken(payload) {
+    console.log("payload : ", payload);
+    const token = await jwt.sign(payload, secret_key, {
         expiresIn: 86400
     });
     return token;
