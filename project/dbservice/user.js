@@ -3,7 +3,7 @@ const tokenService = require("../service/tokenservice");
 
 async function signUp(username, password, con) {
     try {
-        const query = `USE project` 
+        const query = `USE ci_cd` 
         const query2 = `INSERT INTO user VALUES ('${username}', '${password}')`
         con.query(query, function (err, result) {
             if (err) throw err;
@@ -22,7 +22,7 @@ async function signUp(username, password, con) {
 async function login(username, password, con) {
     try {
         return new Promise((resolve, reject) => {
-            const query = `USE project` 
+            const query = `USE ci_cd` 
             const query2 = `SELECT * FROM user WHERE name = '${username}'`
             console.log("Inside the login DB service");
             con.query(query, function (err1, result1) {

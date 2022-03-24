@@ -1,9 +1,10 @@
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
-  host: "svc-9af7218e-ddac-44e0-953c-764082401852-ddl.aws-virginia-3.svc.singlestore.com",
-  user: "admin",
-  password: "Lakshmi1$"
+  host: "localhost",
+  user: "root",
+  password: "Lakshmi1$",
+  port: 3306
 });
 
 con.connect(function(err) {
