@@ -1,6 +1,7 @@
 const userdb = require("../dbservice/user");
 const bcrypt = require("bcrypt");
-const sql = require("../db/sql");
+//const sql = require("../db/sql");
+const sql = require("mysql");
 const tokenService = require("./tokenservice");
 
 async function signUp(username, password) {
